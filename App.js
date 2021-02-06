@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity ,Image} from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity ,ScrollView,Image} from 'react-native';
 import Logo from './assets/mgo.jpeg';
 export default class App extends React.Component {
   state={
@@ -11,13 +11,13 @@ alert(this.state.email)
   }
   render(){
     return (
-
+<ScrollView style={styles.scrollView}>
       <View style={styles.container}>
         <Image source= {Logo}
         style={{width:150 , height: 150}}
       />
       
-        <Text style={styles.logo}> ສະບາຍດີ Lago</Text>
+        <Text style={styles.logo}> ສະບາຍດີ LAGO</Text>
         <View style={styles.inputView} >
           <TextInput  
             style={styles.inputText}
@@ -49,6 +49,7 @@ alert(this.state.email)
              
         </TouchableOpacity>
       </View>
+      </ScrollView>
     );
   }
 }
@@ -56,9 +57,11 @@ alert(this.state.email)
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection:'column',
     backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
+    marginTop:200
   },
   logo:{
     margin:21,
@@ -68,7 +71,7 @@ const styles = StyleSheet.create({
     marginBottom:40
   },
   inputView:{
-    width:"80%",
+    width:'50%',
     
     backgroundColor:"#D9D7D7",
     borderRadius:25,
@@ -99,16 +102,14 @@ const styles = StyleSheet.create({
   },
 
   regiBtn:{
-   
-    width:"10%",
+    width:"30%",
     backgroundColor:"white",
   borderRadius:25,
     height:50,
-    // alignItems:"center",
+    alignItems:"center",
     justifyContent:"center",
-    marginTop:20,
-    marginLeft:'70%',
-    marginBottom:10
+   marginTop:5,
+    
   },
 
   loginText:{
